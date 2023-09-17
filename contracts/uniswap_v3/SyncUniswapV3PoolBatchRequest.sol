@@ -19,6 +19,7 @@ interface IUniswapV3Pool {
 
     function liquidity() external view returns (uint128);
 
+    // https://github.com/pancakeswap/pancake-v3-contracts/blob/469d62037e005d7d0ed919b97b2c3476c65d41a3/projects/v3-core/contracts/PancakeV3Pool.sol#L73
     function slot0()
         external
         view
@@ -28,7 +29,7 @@ interface IUniswapV3Pool {
             uint16 observationIndex,
             uint16 observationCardinality,
             uint16 observationCardinalityNext,
-            uint8 feeProtocol,
+            uint32 feeProtocol,
             bool unlocked
         );
 
