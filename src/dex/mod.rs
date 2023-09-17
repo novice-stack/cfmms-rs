@@ -130,7 +130,9 @@ impl Dex {
                         pools,
                         middleware.clone(),
                     )
-                    .await?;
+                    .await
+                    // fix me out of gas
+                    .unwrap_or_else(|e| println!("Error when getting pool data: {:?}", e));
 
                     progress_bar.inc(step as u64);
                 }
